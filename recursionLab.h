@@ -8,7 +8,10 @@ using namespace std;
 //          lineOfStars(0) returns ""
 // You may not use a loop.
 string lineOfStars(int n) {
-	return "fixme";
+	if (n == 0) {
+		return "";
+	}
+	return "*" + lineofStars(n-1);
 }
 
 // Write a function power() that will
@@ -35,7 +38,10 @@ should display:
 ****
 
 */
-void stars(int n) {}
+void stars(int n) {
+	if (n == 4) {
+		return;
+}
 
 // Write a *recursive* function that will check if
 //    a string is a palindrome
@@ -43,7 +49,14 @@ void stars(int n) {}
 // Hint 2: s.substr(i,j) gives you the substring of s. For example if s = Hello, s(1,s.length()-1) gives you ello
 bool isPalindromeR(string s)
 {
+	if (s.empty() || s.length() == 1) {
+		return true;
+	}
+	id (s. front() == s. back()) {
+		return isPalindromeR(s.substr(1, s.length() - 2));
+	} else {
 	return false;
+   }
 }
 
 
@@ -52,5 +65,8 @@ bool isPalindromeR(string s)
 //  methods from the previous function
 string reverse(string s)
 {
-	return "fixme"; 
+	if (s.empty() || s. length() == 1) {
+		return s;
+	}
+	return s.back() + reverse(s.substr(0, s.length() - 1)); 
 }
